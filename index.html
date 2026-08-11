@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Beckham Quiz</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #f1c40f;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-choice {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-choice:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            min-height: 30px;
+        }
+
+        .correct {
+            color: #2ecc71;
+        }
+
+        .wrong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>David Beckham ghi bao nhiêu bàn?</h1>
+        
+        <div class="btn-group">
+            <button class="btn-choice" onclick="checkAnswer(700)">700 bàn</button>
+            <button class="btn-choice" onclick="checkAnswer(1000)">1000 bàn</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(goals) {
+            const resultDiv = document.getElementById('result');
+            if (goals === 700) {
+                resultDiv.innerText = "Chính xác! 🎉";
+                resultDiv.className = "correct";
+            } else {
+                resultDiv.innerText = "Sai rồi, hãy thử lại! ❌";
+                resultDiv.className = "wrong";
+            }
+        }
+    </script>
+
+</body>
+  </html>
